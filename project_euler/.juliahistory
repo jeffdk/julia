@@ -1,0 +1,13 @@
+for i in 100:100
+fib(100)
+fib(10)
+fib2(100)
+fib2(10)
+fib2(15)
+fib2(19)
+fib2(30)
+fib2(50)
+fib(50)
+q()
+quit
+quit()

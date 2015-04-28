@@ -8,12 +8,25 @@ function isPrime(n::Int64)
     end
     return ans
 end
-     
 
-function primeFactorize(n::Int64)
+function isPrime(n::UnitRange{Int64})
+    answ = falses(length(n))
+    cnt = 0
+    for i = n
+        cnt+=1
+        answ[cnt] = isPrime(i)
+    end
+    return answ
+end
 
-    testN = convert(Int64, sqrt(n))
-    isPrime = zeros(Int64, testN)
-    
-    for i = 1:Sqrt(n)
-        
+function maxPrimeDiv(n::Int64)
+    maxDiv = 1
+    for i = 1:sqrt(n)
+        if isPrime(i) && n % i == 0
+            maxDiv = i
+        end
+    end
+    maxDiv
+end
+
+print(isPrime(2:13))
